@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{8FFB629D-F513-41CE-95D2-7ECE97B6EEEC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{10703586-EFFF-49D5-98EC-30A1CDDD19C5}</ProjectGuid>
+    <TemplateGuid>{b6f3ff35-79b2-4f25-a2fc-60a7cf61013b}</TemplateGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Xminder</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>Facetec.iOS</AssemblyName>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>portable</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'iOS|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\iOS\</OutputPath>
+    <DefineConstants>HOTRESTART;__IOS__;__MOBILE__;__UNIFIED__;DEBUG;</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>portable</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <LangVersion>latest</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="..\FaceTecSDK.framework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+      <ForceLoad>False</ForceLoad>
+    </NativeReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Swift4.Core">
+      <Version>4.2.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Swift4.Foundation">
+      <Version>4.2.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Swift4.Dispatch">
+      <Version>4.2.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Swift4.OS">
+      <Version>4.2.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Swift4.Darwin">
+      <Version>4.2.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Swift4.Metal">
+      <Version>4.2.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Swift4.QuartzCore">
+      <Version>4.2.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Swift4.CoreGraphics">
+      <Version>4.2.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Swift4.CoreFoundation">
+      <Version>4.2.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Swift4.CoreImage">
+      <Version>4.2.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Swift4.ObjectiveC">
+      <Version>4.2.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Swift4.CoreMedia">
+      <Version>4.2.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Swift4.CoreAudio">
+      <Version>4.2.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Swift4.SIMD">
+      <Version>4.2.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Swift4.AVFoundation">
+      <Version>4.2.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Swift4">
+      <Version>4.0.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Swift4.UIKit">
+      <Version>4.2.1.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingCoreSource Include="Structs.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
+</Project>

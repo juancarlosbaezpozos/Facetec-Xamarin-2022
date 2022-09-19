@@ -1,0 +1,4 @@
+es mi comando para compilar en mi mac en la nube / this is my command to build iOS library from my mac in cloud -> macincloud.com
+
+open a developer command prompt from VS 2022
+msbuild Facetec.iOS.sln /p:ServerAddress=205.251.13.229 /p:ServerUser=YOURUSERNAME /p:Platform=iPhone /p:ServerPassword=YOURPWD /p:Configuration=iOS /p:Platform="Any CPU"
